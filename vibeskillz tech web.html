@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibeskillz Technologies</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    overflow-x: hidden;
+  }
+
+  /* Animated gradient background */
+  .bg-gradient {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, #0a0a0f, #1e3a8a, #0a0a0f);
+    background-size: 300% 300%;
+    animation: gradientShift 15s ease infinite;
+    z-index: -1;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Hero section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: slideDown 1s ease-out;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    color: #94a3b8;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+  }
+
+  .cta-btn {
+    margin-top: 2.5rem;
+    padding: 16px 45px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+  }
+
+  /* Services grid */
+  .services {
+    padding: 100px 0;
+  }
+
+  .services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .card:nth-child(1) { animation-delay: 0.2s; }
+  .card:nth-child(2) { animation-delay: 0.4s; }
+  .card:nth-child(3) { animation-delay: 0.6s; }
+
+  .card:hover {
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+  }
+
+  .card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+    color: #64748b;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  
+  <section class="hero">
+    <div class="container">
+      <h1>Vibeskillz Technologies</h1>
+      <p class="tagline">Building the future with code, cloud & creativity</p>
+      <button class="cta-btn" onclick="alert('Let’s build something great!')">Get Started</button>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2>What We Do</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">💻</div>
+          <h3>Web & App Development</h3>
+          <p>Modern, fast, responsive apps built with latest tech stacks.</p>
+        </div>
+        <div class="card">
+          <div class="icon">☁️</div>
+          <h3>Cloud Solutions</h3>
+          <p>Scalable infrastructure on AWS, Azure & modern DevOps.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3>AI Integration</h3>
+          <p>Bring AI, automation & data into your business workflows, we provide good services at vibeskillz technologies .</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Vibeskillz Technologies | Harare, ZW | Future technology</p>
+  </footer>
+</body>
+</html>
