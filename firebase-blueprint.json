@@ -1,0 +1,53 @@
+{
+  "entities": {
+    "Rental": {
+      "title": "Rental",
+      "description": "A rental property listed on the platform.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "integer" },
+        "beds": { "type": "integer" },
+        "baths": { "type": "integer" },
+        "rating": { "type": "number" },
+        "imageUrl": { "type": "string" },
+        "lat": { "type": "number" },
+        "lng": { "type": "number" },
+        "formattedAddress": { "type": "string" },
+        "availability": {
+          "type": "string",
+          "enum": ["available", "pending", "rented"]
+        },
+        "hostId": { "type": "string" },
+        "hostName": { "type": "string" }
+      },
+      "required": ["id", "title", "price", "lat", "lng", "availability"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "An in-app chat message between a renter and a host.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "rentalId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "rentalId", "senderId", "senderName", "text", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/rentals/{rentalId}": {
+      "schema": "Rental",
+      "description": "Rentals collection containing all property details."
+    },
+    "/rentals/{rentalId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Messages subcollection for in-app messaging regarding a specific rental."
+    }
+  }
+}
